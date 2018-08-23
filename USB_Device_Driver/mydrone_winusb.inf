@@ -1,0 +1,96 @@
+;
+; MyDrone WinUsb driver installation.
+;
+[Version]
+Signature           = "$Windows NT$"
+Class               = USB
+ClassGuid           = {36FC9E60-C465-11CF-8056-444553540000}
+Provider            = %ProviderName%
+DriverVer           = 07/31/2018,1.0.0010.00001
+;
+; This section seems to be required for WinUsb driver installation.
+; If this section is removed the installer will report an error
+; "Required section not found in INF file".
+;
+[ClassInstall32]
+Addreg = MyDroneWinUsbClassReg
+
+[OceanIWinUsbClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-1
+
+[Manufacturer]
+%ProviderName% = MicroVision, NTx86, NTamd64
+
+[MicroVision.NTx86]
+
+%SingleOiBulkInterface%        = USB_Install, USB\VID_0483&PID_0401
+%CompositeOiBulkInterface%     = USB_Install, USB\VID_0483&PID_0401&MI_01
+
+[MicroVision.NTamd64]
+
+%SingleOiBulkInterface%        = USB_Install, USB\VID_0483&PID_0401
+%CompositeOiBulkInterface%     = USB_Install, USB\VID_0483&PID_0401&MI_01
+
+
+[USB_Install]
+Include = winusb.inf
+Needs   = WINUSB.NT
+
+[USB_Install.Services]
+Include     = winusb.inf
+AddService  = WinUSB,0x00000002,WinUSB_ServiceInstall
+
+[WinUSB_ServiceInstall]
+DisplayName     = %WinUSB_SvcDesc%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\WinUSB.sys
+
+[USB_Install.Wdf]
+KmdfService = WINUSB, WinUSB_Install
+
+[WinUSB_Install]
+KmdfLibraryVersion  = 1.7
+
+[USB_Install.HW]
+AddReg  = Dev_AddReg
+
+[Dev_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{77E3B6D1-A991-4C0A-88BA-E1D3548C2F41}"
+
+[USB_Install.CoInstallers]
+AddReg    = CoInstallers_AddReg
+CopyFiles = CoInstallers_CopyFiles
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller01009.dll,WdfCoInstaller","WinUSBCoInstaller2.dll"
+
+[CoInstallers_CopyFiles]
+WinUSBCoInstaller2.dll
+WdfCoInstaller01009.dll
+
+[DestinationDirs]
+CoInstallers_CopyFiles=11
+
+[SourceDisksNames]
+1 = %DISK_NAME%,,,\i386
+2 = %DISK_NAME%,,,\amd64
+
+[SourceDisksFiles.x86]
+WinUSBCoInstaller2.dll  = 1
+WdfCoInstaller01009.dll = 1
+
+[SourceDisksFiles.amd64]
+WinUSBCoInstaller2.dll  = 2
+WdfCoInstaller01009.dll = 2
+
+[Strings]
+ProviderName                = "duvallee.lee"
+SingleOiBulkInterface       = "MyDrone BulkIO Interface"
+CompositeOiBulkInterface    = "MyDrone BulkIO Interface"
+SingleBootLoaderInterface   = "MyDrone Bootloader Interface"
+WinUSB_SvcDesc              = "MyDrone USB Driver"
+DISK_NAME                   = "MyDrone WinUsb installation disk"
+ClassName                   = "MyDrone device"
