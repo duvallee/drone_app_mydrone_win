@@ -33,6 +33,9 @@
     <ClInclude Include="usb_bulk_device.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="scope\OScopeCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="my_drone.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="usb_bulk_device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scope\OScopeCtrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
