@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\matrix">
+      <UniqueIdentifier>{e4905a3f-adf2-4858-a9aa-270d5454e068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenGL">
+      <UniqueIdentifier>{12d98e6c-a7f4-4315-b665-bc84155c6a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{03facb63-8aaf-4391-94a2-540a15436151}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="my_drone.h">
@@ -36,6 +45,27 @@
     <ClInclude Include="OScopeCtrl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="matrix\matrix2.hxx">
+      <Filter>Source Files\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="OglWinExt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixAlgebra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OglWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OglCommon.h">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="OglObjects.h">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="my_drone.cpp">
@@ -53,6 +83,18 @@
     <ClCompile Include="OScopeCtrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="matrix\matrix.cc">
+      <Filter>Source Files\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="OglObjects.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="OglWinExt.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="OglWnd.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="mydrone.rc">
@@ -62,6 +104,9 @@
   <ItemGroup>
     <None Include="res\mydrone.rc2">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="matrix\cmatrix">
+      <Filter>Source Files\matrix</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

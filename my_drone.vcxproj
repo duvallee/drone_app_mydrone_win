@@ -96,7 +96,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -119,7 +119,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -144,7 +144,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -171,7 +171,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -191,8 +191,15 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="MatrixAlgebra.h" />
+    <ClInclude Include="matrix\matrix2.hxx" />
+    <ClInclude Include="mm.h" />
     <ClInclude Include="my_drone.h" />
     <ClInclude Include="my_droneDlg.h" />
+    <ClInclude Include="OglCommon.h" />
+    <ClInclude Include="OglObjects.h" />
+    <ClInclude Include="OglWinExt.h" />
+    <ClInclude Include="OglWnd.h" />
     <ClInclude Include="OScopeCtrl.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -200,8 +207,12 @@
     <ClInclude Include="usb_bulk_device.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="matrix\matrix.cc" />
     <ClCompile Include="my_drone.cpp" />
     <ClCompile Include="my_droneDlg.cpp" />
+    <ClCompile Include="OglObjects.cpp" />
+    <ClCompile Include="OglWinExt.cpp" />
+    <ClCompile Include="OglWnd.cpp" />
     <ClCompile Include="OScopeCtrl.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -215,6 +226,7 @@
     <ResourceCompile Include="mydrone.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="matrix\cmatrix" />
     <None Include="res\mydrone.rc2" />
   </ItemGroup>
   <ItemGroup>
