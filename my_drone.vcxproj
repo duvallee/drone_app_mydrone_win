@@ -191,6 +191,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ARS.h" />
     <ClInclude Include="MatrixAlgebra.h" />
     <ClInclude Include="matrix\matrix2.hxx" />
     <ClInclude Include="mm.h" />
@@ -208,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="matrix\matrix.cc" />
+    <ClCompile Include="ARSbyEKF.cpp" />
     <ClCompile Include="my_drone.cpp" />
     <ClCompile Include="my_droneDlg.cpp" />
     <ClCompile Include="OglObjects.cpp" />

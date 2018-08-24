@@ -19,7 +19,7 @@
     <Filter Include="Source Files\OpenGL">
       <UniqueIdentifier>{12d98e6c-a7f4-4315-b665-bc84155c6a34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Common">
+    <Filter Include="Source Files\algorithm">
       <UniqueIdentifier>{03facb63-8aaf-4391-94a2-540a15436151}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -66,6 +66,9 @@
     <ClInclude Include="OglObjects.h">
       <Filter>Source Files\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="ARS.h">
+      <Filter>Source Files\algorithm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="my_drone.cpp">
@@ -94,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="OglWnd.cpp">
       <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="ARSbyEKF.cpp">
+      <Filter>Source Files\algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
