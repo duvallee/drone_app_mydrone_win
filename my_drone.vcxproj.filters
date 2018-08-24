@@ -33,7 +33,7 @@
     <ClInclude Include="usb_bulk_device.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scope\OScopeCtrl.h">
+    <ClInclude Include="OScopeCtrl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,7 +50,7 @@
     <ClCompile Include="usb_bulk_device.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scope\OScopeCtrl.cpp">
+    <ClCompile Include="OScopeCtrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

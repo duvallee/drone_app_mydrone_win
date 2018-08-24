@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  File: OScopeCtrl.cpp
  *
  * Written by duvallee.lee in 2018
@@ -206,7 +206,7 @@ BOOL COScopeCtrl::Create(DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT
    BOOL result;
    static CString className                              = AfxRegisterWndClass(CS_DBLCLKS | CS_HREDRAW | CS_VREDRAW, AfxGetApp()->LoadStandardCursor(IDC_ARROW));
    
-   result                                                = CWnd::CreateEx(WS_EX_STATICEDGE, className, NULL, dwStyle, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, pParentWnd->GetSafeHwnd(), (HMENU) nID);
+   result                                                = CWnd::CreateEx(WS_EX_STATICEDGE, className, NULL, dwStyle, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, pParentWnd->GetSafeHwnd(), (HMENU)(UINT_PTR)nID);
    if (result != 0)
    {
       InvalidateCtrl();
@@ -247,7 +247,7 @@ void COScopeCtrl::SetTrendRatio(int iTrend, UINT iRatio)
       double dTrendModifier                              = (double) m_PlotData[iTrend].iTrendRatio / iRatio;
       m_PlotData[iTrend].iTrendRatio                     = iRatio;
 
-      int iCnt                                           = m_PlotData[iTrend].lstPoints.GetCount();
+      int iCnt                                           = (int) m_PlotData[iTrend].lstPoints.GetCount();
       for (int i = 0; i < iCnt; i++)
       {   
          POSITION pos                                    = m_PlotData[iTrend].lstPoints.FindIndex(i);
@@ -1064,12 +1064,12 @@ int COScopeCtrl::ReCreateGraph()
    
    // Try to avoid to call the method AppendPoints() more than necessary
    // Remark: the default size of the list is 1024
-   int pointToDraw                                       = m_PlotData[0].lstPoints.GetCount();
+   int pointToDraw                                       = (int) m_PlotData[0].lstPoints.GetCount();
    if (pointToDraw > m_nPlotWidth / m_nShiftPixels + 1)
    {
       pointToDraw                                        = m_nPlotWidth / m_nShiftPixels + 1;
    }
-   int startIndex                                        = m_PlotData[0].lstPoints.GetCount() - pointToDraw;
+   int startIndex                                        = (int) m_PlotData[0].lstPoints.GetCount() - pointToDraw;
 
    // Prepare to go through the elements on n lists in parallel
    for(int iTrend = 0; iTrend < m_NTrends; iTrend++)

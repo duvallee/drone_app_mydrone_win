@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  File: OScopeCtrl.h
  *
  * Written by duvallee.lee in 2018
